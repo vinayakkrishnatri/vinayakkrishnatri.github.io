@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinayak Krishnatri | PhD Scholar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #4f46e5;
+            --navy: #002147;
+            --slate: #1e293b;
+            --text-light: #64748b;
+            /* Gradient background like your image */
+            --bg-gradient: linear-gradient(135deg, #f8faff 0%, #eef2ff 50%, #f5f3ff 100%);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-gradient);
+            background-attachment: fixed;
+            color: var(--slate);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+
+        /* NAVBAR - STRICTLY LEFT ALIGNED */
+        nav {
+            display: flex;
+            justify-content: flex-start; /* Aligns content to the left */
+            align-items: center;
+            padding: 30px 10%;
+            gap: 50px; /* Space between Name and Navigation Links */
+        }
+
+        .brand {
+            font-weight: 800;
+            font-size: 1.4rem;
+            color: var(--slate);
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            color: var(--text-light);
+            transition: all 0.3s ease;
+        }
+
+        .nav-links li:hover {
+            color: var(--primary-blue);
+        }
+
+        /* MAIN LAYOUT */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 50px;
+            padding: 20px 10%;
+        }
+
+        /* LEFT SIDE - PROFILE */
+        .profile-column {
+            text-align: left;
+        }
+
+        .profile-card {
+            position: sticky;
+            top: 40px;
+        }
+
+        .profile-pic {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 8px solid white;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
+        }
+
+        .profile-column h1 {
+            font-size: 2.5rem;
+            margin: 10px 0;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .title-tag {
+            color: var(--primary-blue);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        /* RIGHT SIDE - CONTENT CARDS */
+        .card {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            margin-bottom: 30px;
+        }
+
+        h3 { font-size: 1.5rem; margin-top: 0; }
+
+        .btn-cv {
+            display: inline-flex;
+            align-items: center;
+            background: var(--primary-blue);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: transform 0.2s ease;
+        }
+
+        .btn-cv:hover { transform: translateY(-2px); }
+
+        /* EDUCATION GRID - HIDDEN BY DEFAULT */
+        #education-section {
+            display: none; 
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        .edu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .edu-item {
+            background: white;
+            padding: 25px;
+            border-radius: 18px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+        }
+
+        .edu-item strong { display: block; font-size: 1rem; color: var(--slate); }
+        .edu-item span { font-size: 0.85rem; color: var(--text-light); }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="brand">Vinayak Krishnatri</div>
+        <ul class="nav-links">
+            <li onclick="showHome()">Bio</li>
+            <li>Papers</li>
+            <li onclick="showEducation()">Education</li>
+            <li>Teaching</li>
+            <li>News</li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="profile-column">
+            <div class="profile-card">
+                <img src="profile.jpg" alt="Vinayak Krishnatri" class="profile-pic">
+                <div class="title-tag">PhD Candidate</div>
+                <h1>Vinayak Krishnatri</h1>
+                <p style="color: var(--text-light);">IIT Kanpur • Economic Sciences</p>
+                <div style="margin-top: 20px; display: flex; gap: 15px;">
+                    </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div id="bio-section" class="card">
+                <h3>Professional Summary</h3>
+                <p>I am a Ph.D. Candidate in Economic Sciences at the Indian Institute of Technology (IIT) Kanpur, specializing in Development Economics and Health Economics. My research focuses on public health, nutrition, and policy impact evaluation in India.</p>
+                <a href="cv.pdf" class="btn-cv">Download CV</a>
+            </div>
+
+            <div id="education-section" class="card">
+                <h3>Education</h3>
+                <div class="edu-grid">
+                    <div class="edu-item">
+                        <strong>PhD Economic Sciences</strong>
+                        <span>IIT Kanpur (Ongoing)</span>
+                    </div>
+                    <div class="edu-item">
+                        <strong>MA Economics</strong>
+                        <span>Jamia Millia Islamia</span>
+                    </div>
+                    <div class="edu-item">
+                        <strong>BA Economics (Hons.)</strong>
+                        <span>Ramjas College, DU</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showEducation() {
+            document.getElementById('education-section').style.display = 'block';
+            window.scrollTo({
+                top: document.getElementById('education-section').offsetTop - 50,
+                behavior: 'smooth'
+            });
+        }
+
+        function showHome() {
+            // Logic to scroll back up or hide sections if you want
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+
+</body>
+</html>
