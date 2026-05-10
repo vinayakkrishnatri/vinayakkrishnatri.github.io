@@ -3,232 +3,228 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vinayak Krishnatri | PhD Scholar</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <title>Vinayak Krishnatri</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
     <style>
-        :root {
-            --primary-blue: #4f46e5;
-            --navy: #002147;
-            --slate: #1e293b;
-            --text-light: #64748b;
-            /* Gradient background like your image */
-            --bg-gradient: linear-gradient(135deg, #f8faff 0%, #eef2ff 50%, #f5f3ff 100%);
+        /* ADDED scroll-padding-top to prevent the fixed header from covering section titles */
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px; 
         }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background: var(--bg-gradient);
-            background-attachment: fixed;
-            color: var(--slate);
-            margin: 0;
-            padding: 0;
-            min-height: 100vh;
-        }
-
-        /* NAVBAR - STRICTLY LEFT ALIGNED */
+        body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background-color: #f8faff; color: #1e293b; }
+        
+        /* Nav Bar - Extreme Alignment */
         nav {
+            background-color: #2c3e50;
+            padding: 25px 5%; 
             display: flex;
-            justify-content: flex-start; /* Aligns content to the left */
             align-items: center;
-            padding: 30px 10%;
-            gap: 50px; /* Space between Name and Navigation Links */
+            position: fixed;
+            width: 100%;
+            box-sizing: border-box;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
-        .brand {
-            font-weight: 800;
-            font-size: 1.4rem;
-            color: var(--slate);
-            letter-spacing: -0.5px;
+        .nav-left {
+            font-weight: 800; font-size: 1.6rem; color: white; text-decoration: none; letter-spacing: -0.5px; margin-right: auto; 
         }
 
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-            margin: 0;
-            padding: 0;
+        .nav-right { display: flex; gap: 35px; margin-left: auto; }
+        .nav-right a { 
+            color: #cbd5e1; 
+            text-decoration: none; 
+            font-weight: 600; 
+            font-size: 1.1rem; 
+            transition: color 0.3s ease; /* Smooth color transition for the links */
+        }
+        .nav-right a:hover { color: white; }
+
+        /* Section Styling */
+        section {
+            padding: 100px 10% 80px 10%; 
+            min-height: 60vh;
         }
 
-        .nav-links li {
-            font-size: 0.95rem;
-            font-weight: 600;
-            cursor: pointer;
-            color: var(--text-light);
-            transition: all 0.3s ease;
-        }
-
-        .nav-links li:hover {
-            color: var(--primary-blue);
-        }
-
-        /* MAIN LAYOUT */
-        .container {
+        .main-container {
             max-width: 1100px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: 320px 1fr;
+            display: flex;
+            justify-content: center;
+            align-items: center; 
             gap: 50px;
-            padding: 20px 10%;
-        }
-
-        /* LEFT SIDE - PROFILE */
-        .profile-column {
-            text-align: left;
-        }
-
-        .profile-card {
-            position: sticky;
-            top: 40px;
         }
 
         .profile-pic {
-            width: 220px;
-            height: 220px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 8px solid white;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-            margin-bottom: 25px;
+            width: 320px; height: auto; border-radius: 4px; box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+            border: 4px solid white; flex-shrink: 0; transform: translateY(-10px); 
         }
 
-        .profile-column h1 {
-            font-size: 2.5rem;
-            margin: 10px 0;
-            font-weight: 800;
-            letter-spacing: -1px;
-        }
+        .bio-content { flex: 1; max-width: 650px; }
+        .bio-content p { line-height: 1.8; font-size: 1.15rem; margin-bottom: 25px; color: #334155; text-align: justify; }
 
-        .title-tag {
-            color: var(--primary-blue);
-            font-weight: 600;
-            font-size: 1.1rem;
-            margin-bottom: 5px;
-        }
+        h2 { font-size: 1.8rem; color: #2c3e50; border-bottom: 1px solid #000; padding-bottom: 10px; margin-bottom: 40px; }
+        
+        .list-item { margin-bottom: 15px; line-height: 1.6; font-size: 1.05rem; }
 
-        /* RIGHT SIDE - CONTENT CARDS */
-        .card {
-            background: rgba(255, 255, 255, 0.6);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 24px;
-            padding: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-            margin-bottom: 30px;
-        }
-
-        h3 { font-size: 1.5rem; margin-top: 0; }
-
-        .btn-cv {
-            display: inline-flex;
-            align-items: center;
-            background: var(--primary-blue);
-            color: white;
-            padding: 12px 28px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
-            margin-top: 20px;
-            transition: transform 0.2s ease;
-        }
-
-        .btn-cv:hover { transform: translateY(-2px); }
-
-        /* EDUCATION GRID - HIDDEN BY DEFAULT */
-        #education-section {
-            display: none; 
-            animation: fadeIn 0.5s ease forwards;
-        }
-
-        .edu-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .edu-item {
+        /* CV Section Specific Styles */
+        .cv-container {
+            width: 100%;
+            height: 800px; 
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            overflow: hidden;
             background: white;
-            padding: 25px;
-            border-radius: 18px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
 
-        .edu-item strong { display: block; font-size: 1rem; color: var(--slate); }
-        .edu-item span { font-size: 0.85rem; color: var(--text-light); }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+        .cv-download-btn {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background-color: #2c3e50;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: background 0.3s ease;
         }
+        .cv-download-btn:hover { background-color: #4f46e5; }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="brand">Vinayak Krishnatri</div>
-        <ul class="nav-links">
-            <li onclick="showHome()">Bio</li>
-            <li>Papers</li>
-            <li onclick="showEducation()">Education</li>
-            <li>Teaching</li>
-            <li>News</li>
-        </ul>
+        <a href="#home" class="nav-left">Vinayak Krishnatri</a>
+        <div class="nav-right">
+            <a href="#home">Home</a>
+            <a href="#research">Research</a>
+            <a href="#conferences">Conferences</a>
+            <a href="#teaching">Teaching</a>
+            <a href="#cv-viewer">CV</a>
+            <a href="#contact">Contact</a>
+        </div>
     </nav>
 
-    <div class="container">
-        <div class="profile-column">
-            <div class="profile-card">
-                <img src="profile.jpg" alt="Vinayak Krishnatri" class="profile-pic">
-                <div class="title-tag">PhD Candidate</div>
-                <h1>Vinayak Krishnatri</h1>
-                <p style="color: var(--text-light);">IIT Kanpur • Economic Sciences</p>
-                <div style="margin-top: 20px; display: flex; gap: 15px;">
-                    </div>
+    <section id="home">
+        <div class="main-container">
+            <img src="photowebsite.jpg" alt="Vinayak Krishnatri" class="profile-pic">
+            <div class="bio-content">
+                <p>I am a PhD Scholar in Economics at the Department of Economic Sciences, IIT Kanpur, pursuing my doctoral research under the supervision of Dr. Sukumar Vellakkal. My research interests lie at the intersection of Development Economics, Health Economics, and Applied Econometrics.</p>
+                <p>My work utilizes rigorous empirical methods to evaluate how structural changes such as digital expansion, regulatory policies, and urbanization shape public health, nutrition, human capital, and food security at the micro-level in India.</p>
+                <p>I hold an M.A. in Economics from Jamia Millia Islamia and a B.A. (Hons.) in Economics from Ramjas College, University of Delhi.</p>
+                <p>Outside of academics, I am a passionate traveler who enjoys exploring new landscapes, observing wildlife, and discovering regional cuisines.</p>
             </div>
         </div>
+    </section>
 
-        <div class="main-content">
-            <div id="bio-section" class="card">
-                <h3>Professional Summary</h3>
-                <p>I am a Ph.D. Candidate in Economic Sciences at the Indian Institute of Technology (IIT) Kanpur, specializing in Development Economics and Health Economics. My research focuses on public health, nutrition, and policy impact evaluation in India.</p>
-                <a href="cv.pdf" class="btn-cv">Download CV</a>
+    <section id="research" style="background-color: #ffffff;">
+        <div style="max-width: 900px; margin: 0 auto;">
+            <h2>Publications</h2>
+            <div style="margin-bottom: 35px; line-height: 1.6;">
+                <a href="https://doi.org/10.1111/agec.70090" target="_blank" style="font-size: 1.15rem; color: #1e293b; text-decoration: none; font-weight: 600; display: block; margin-bottom: 4px;">
+                    Does Alcohol Prohibition Improve Caloric and Macronutrient Intake From Healthy Food Sources? Evidence From Bihar, India
+                </a>
+                <div style="font-size: 1rem; color: #475569;">
+                    with Sukumar Vellakkal. <strong>Agricultural Economics</strong>, 2026. 
+                    <span style="font-size: 0.85rem; color: #94a3b8;">[ABDC: A, ABS: 2, SJR: Q1]</span>
+                </div>
+                <a href="https://doi.org/10.1111/agec.70090" target="_blank" style="color: #4f46e5; text-decoration: none; font-size: 0.85rem;">DOI: 10.1111/agec.70090</a>
             </div>
+            <div style="margin-bottom: 35px; line-height: 1.6;">
+                <a href="https://doi.org/10.1016/j.telpol.2024.102872" target="_blank" style="font-size: 1.15rem; color: #1e293b; text-decoration: none; font-weight: 600; display: block; margin-bottom: 4px;">
+                    Does affordable Internet promote maternal and child healthcare access? Evidence from a post-telecommunication market disruption period in India
+                </a>
+                <div style="font-size: 1rem; color: #475569;">
+                    with Sukumar Vellakkal. <strong>Telecommunications Policy</strong>, 2024. 
+                    <span style="font-size: 0.85rem; color: #94a3b8;">[ABS: 1, SJR: Q1]</span>
+                </div>
+                <a href="https://doi.org/10.1016/j.telpol.2024.102872" target="_blank" style="color: #4f46e5; text-decoration: none; font-size: 0.85rem;">DOI: 10.1016/j.telpol.2024.102872</a>
+            </div>
+        </div>
+    </section>
 
-            <div id="education-section" class="card">
-                <h3>Education</h3>
-                <div class="edu-grid">
-                    <div class="edu-item">
-                        <strong>PhD Economic Sciences</strong>
-                        <span>IIT Kanpur (Ongoing)</span>
-                    </div>
-                    <div class="edu-item">
-                        <strong>MA Economics</strong>
-                        <span>Jamia Millia Islamia</span>
-                    </div>
-                    <div class="edu-item">
-                        <strong>BA Economics (Hons.)</strong>
-                        <span>Ramjas College, DU</span>
-                    </div>
+    <section id="conferences" style="background-color: #f1f5f9;">
+        <div style="max-width: 900px; margin: 0 auto;">
+            <h2>Conferences</h2>
+            <div class="list-item">• <strong>Asian Meeting of the Econometric Society 2026</strong> at New York University Abu Dhabi, Abu Dhabi (February 23–25, 2026)</div>
+            <div class="list-item">• <strong>7th Annual Economics Conference</strong> at Ahmedabad University, Ahmedabad (January 9–10, 2026)</div>
+            <div class="list-item">• <strong>INET-YSI International Conference on Structural Change, Youth Employability, and Inequality</strong> at the University of Hyderabad (November 27–28, 2025)</div>
+            <div class="list-item">• <strong>Young Scholars Conference</strong> at Centre for Economic Studies and Planning, JNU, New Delhi (October 9-10, 2025)</div>
+            <div class="list-item">• <strong>Eleventh Conference of the Society for the Study of Economic Inequality</strong> at the World Bank Headquarters, Washington, D.C. (Virtual) (July 9–11, 2025)</div>
+            <div class="list-item">• <strong>Royal Economic Society 2025 Annual Conference</strong> at the University of Birmingham, Birmingham (June 30 – July 2, 2025)</div>
+            <div class="list-item">• <strong>Global Business Research Conference 2025</strong> at the Indian Institute of Foreign Trade, New Delhi (March 26–28, 2025)</div>
+            <div class="list-item">• <strong>INET-YSI South Asia Regional Conference on Social Change</strong> at the Institute for Social and Economic Change (ISEC), Bengaluru (February 24–26, 2025)</div>
+            <div class="list-item">• <strong>Australian Conference of Economists 2024</strong> at the University of Adelaide, Adelaide (July 10–12, 2024)</div>
+            <div class="list-item">• <strong>Meeting of Young Minds in Frontier of Economics 2024</strong> at the IIT Bombay, Mumbai (February 20–22, 2024)</div>
+            <div class="list-item">• <strong>18th Annual Conference on Economic Growth and Development</strong> at the Indian Statistical Institute, New Delhi (December 18–20, 2023)</div>
+            <div class="list-item">• <strong>Winter School 2023</strong> at the Delhi School of Economics, New Delhi (December 14–16, 2023)</div>
+            <div class="list-item">• <strong>Asian Meeting of the Econometric Society 2023</strong> at the Tsinghua University, Beijing (Virtual) (June 30 – July 2, 2023)</div>
+            <div class="list-item">• <strong>57th Annual Conference of The Indian Econometric Society</strong> at the University of Hyderabad (January 4–6, 2023)</div>
+        </div>
+    </section>
+
+    <section id="teaching" style="background-color: #ffffff;">
+        <div style="max-width: 900px; margin: 0 auto;">
+            <h2>Teaching Assistance</h2>
+            <div class="list-item">• <strong>Macroeconomics I</strong>, Undergraduate, 2026</div>
+            <div class="list-item">• <strong>Economics of Banking and Financial Markets</strong>, NPTEL course, 2025</div>
+            <div class="list-item">• <strong>Empirical Methods in Health Economics and Public Policy</strong>, Postgraduate, 2025</div>
+            <div class="list-item">• <strong>Applied Probability and Statistics</strong>, Undergraduate and Postgraduate, 2025</div>
+            <div class="list-item">• <strong>Macroeconomics I</strong>, Undergraduate, 2025</div>
+            <div class="list-item">• <strong>Economics of Banking and Financial Markets</strong>, NPTEL course, 2024</div>
+            <div class="list-item">• <strong>Macroeconomics II</strong>, Undergraduate, 2024</div>
+            <div class="list-item">• <strong>Economy, Society, and Public Policy</strong>, Undergraduate, 2024</div>
+            <div class="list-item">• <strong>Applied Probability and Statistics</strong>, Undergraduate and Postgraduate, 2023</div>
+            <div class="list-item">• <strong>Money and Banking</strong>, Undergraduate and Postgraduate, 2023</div>
+            <div class="list-item">• <strong>Economics of Banking and Financial Markets</strong>, NPTEL course, 2023</div>
+            <div class="list-item">• <strong>Game Theory</strong>, Undergraduate, 2022</div>
+            <div class="list-item">• <strong>Quantitative Analysis of International Trade</strong>, Undergraduate and Postgraduate, 2022</div>
+        </div>
+    </section>
+
+    <section id="cv-viewer" style="background-color: #f1f5f9;">
+        <div style="max-width: 1000px; margin: 0 auto;">
+            <h2>Curriculum Vitae</h2>
+            <a href="cv.pdf" class="cv-download-btn" target="_blank">
+                <i class="fa-solid fa-file-arrow-down"></i> Download PDF
+            </a>
+            <div class="cv-container">
+                <iframe src="cv.pdf#toolbar=0" width="100%" height="100%" style="border: none;"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" style="padding-bottom: 120px; background-color: #ffffff;">
+        <div style="max-width: 900px; margin: 0 auto;">
+            <h2 style="font-size: 1.8rem; border-bottom: 1px solid #000; padding-bottom: 10px; margin-bottom: 40px;">Contact</h2>
+            <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 40px; margin-bottom: 50px;">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <i class="fa-solid fa-envelope" style="font-size: 1.2rem; color: #2c3e50;"></i>
+                    <a href="mailto:vinayakk20@iitk.ac.in" style="font-size: 1.1rem; color: #1e293b; text-decoration: none;">Email (vinayakk20@iitk.ac.in)</a>
+                </div>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <i class="fa-brands fa-linkedin" style="font-size: 1.2rem; color: #0077b5;"></i>
+                    <a href="https://www.linkedin.com/in/vinayak-krishnatri-408b60188/" target="_blank" style="font-size: 1.1rem; color: #1e293b; text-decoration: none;">LinkedIn Profile</a>
+                </div>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <i class="fa-solid fa-graduation-cap" style="font-size: 1.2rem; color: #4285f4;"></i>
+                    <a href="https://scholar.google.com/citations?user=W-l1VnIAAAAJ&hl=en&oi=ao" target="_blank" style="font-size: 1.1rem; color: #1e293b; text-decoration: none;">Google Scholar Profile</a>
                 </div>
             </div>
+            <div style="padding-top: 30px; border-top: 1px solid #e2e8f0;">
+                <h3 style="font-size: 1.3rem; color: #2c3e50; margin-bottom: 15px;">Address</h3>
+                <p style="font-size: 1rem; color: #64748b; line-height: 1.6; margin: 0;">
+                    Department of Economic Sciences<br>
+                    Indian Institute of Technology Kanpur<br>
+                    Uttar Pradesh, India - 208016
+                </p>
+            </div>
         </div>
-    </div>
-
-    <script>
-        function showEducation() {
-            document.getElementById('education-section').style.display = 'block';
-            window.scrollTo({
-                top: document.getElementById('education-section').offsetTop - 50,
-                behavior: 'smooth'
-            });
-        }
-
-        function showHome() {
-            // Logic to scroll back up or hide sections if you want
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-    </script>
-
+    </section>
 </body>
 </html>
