@@ -4,20 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vinayak Krishnatri | PhD Scholar, IIT Kanpur</title>
+    <meta name="description" content="Vinayak Krishnatri - PhD Scholar in Economic Sciences at IIT Kanpur. Specialized in Development and Health Economics.">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
     <style>
-        /* 1. THE SCROLL TARGET FIX */
+        /* Unified scrolling fix */
         html { 
             scroll-behavior: smooth; 
-            /* This value must match the 'padding-top' of your sections below */
             scroll-padding-top: 100px; 
         }
-
-        body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background-color: #f8faff; color: #1e293b; overflow-x: hidden; }
         
-        /* 2. NAVIGATION */
+        /* SINGLE BACKGROUND COLOR FOR EVERYTHING */
+        body { 
+            font-family: 'Inter', sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            background-color: #f8faff; /* Professional light blue/white tint */
+            color: #1e293b; 
+            overflow-x: hidden; 
+        }
+        
+        /* Navigation */
         nav {
             background-color: #2c3e50; padding: 20px 5%; display: flex; flex-wrap: wrap; 
             align-items: center; justify-content: space-between; position: fixed;
@@ -28,15 +36,16 @@
         .nav-right a { color: #cbd5e1; text-decoration: none; font-weight: 600; font-size: 1rem; transition: 0.3s; }
         .nav-right a:hover { color: white; }
 
-        /* 3. SECTION LAYOUT (LAPTOP) */
+        /* Standard Section Layout */
         section { 
-            /* Top padding ensures content starts below the fixed header */
-            padding: 100px 10% 80px 10%; 
+            padding: 80px 10% 80px 10%; 
             display: flex; 
             flex-direction: column;
             width: 100%; 
             box-sizing: border-box; 
             min-height: 100vh; 
+            /* Optional: subtle border to separate sections without color changes */
+            border-bottom: 1px solid rgba(0,0,0,0.05); 
         }
 
         #home {
@@ -67,30 +76,20 @@
         .bio-content { flex: 1; max-width: 600px; }
         .bio-content p { line-height: 1.8; font-size: 1.15rem; margin-bottom: 25px; color: #334155; text-align: justify; }
 
-        h2 { font-size: 1.8rem; color: #2c3e50; border-bottom: 1px solid #000; padding-bottom: 10px; margin-bottom: 40px; width: 100%; }
+        h2 { font-size: 1.8rem; color: #2c3e50; border-bottom: 2px solid #2c3e50; padding-bottom: 10px; margin-bottom: 40px; width: 100%; }
         .list-item { margin-bottom: 15px; line-height: 1.6; font-size: 1.05rem; }
 
         .cv-container { width: 100%; height: 800px; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; background: white; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
         .cv-download-btn { display: inline-block; margin-bottom: 20px; padding: 10px 20px; background-color: #2c3e50; color: white; text-decoration: none; border-radius: 4px; font-weight: 600; transition: background 0.3s ease; }
         .cv-download-btn:hover { background-color: #4f46e5; }
 
-        /* 4. MOBILE OPTIMIZATION */
         @media (max-width: 900px) {
-            /* On phones, the header is taller, so we need more scroll padding */
-            html { 
-                scroll-padding-top: 180px; 
-            }
-
+            html { scroll-padding-top: 180px; }
             nav { justify-content: center; text-align: center; padding: 15px 5%; }
             .nav-left { width: 100%; margin-bottom: 15px; padding: 0; }
             .nav-right { justify-content: center; width: 100%; gap: 12px; }
             
-            section { 
-                /* Increase top padding on mobile to match scroll-padding-top */
-                padding: 180px 5% 40px 5%; 
-                min-height: auto; 
-            }
-
+            section { padding: 40px 5% 40px 5%; min-height: auto; } 
             #home { min-height: auto; padding-top: 200px; }
             
             .main-container { flex-direction: column; align-items: center; text-align: center; gap: 30px; }
@@ -126,7 +125,7 @@
         </div>
     </section>
 
-    <section id="research" style="background-color: #ffffff;">
+    <section id="research">
         <div style="max-width: 900px; margin: 0 auto; width: 100%;">
             <h2>Publications</h2>
             <div style="margin-bottom: 35px; line-height: 1.6;">
@@ -152,7 +151,7 @@
         </div>
     </section>
 
-    <section id="conferences" style="background-color: #f1f5f9;">
+    <section id="conferences">
         <div style="max-width: 900px; margin: 0 auto; width: 100%;">
             <h2>Conferences</h2>
             <div class="list-item">• <strong>Asian Meeting of the Econometric Society 2026</strong> at New York University Abu Dhabi, Abu Dhabi (February 23–25, 2026)</div>
@@ -161,18 +160,18 @@
             <div class="list-item">• <strong>Young Scholars Conference</strong> at Centre for Economic Studies and Planning, JNU, New Delhi (October 9-10, 2025)</div>
             <div class="list-item">• <strong>Society for the Study of Economic Inequality</strong> at the World Bank Headquarters, Washington, D.C. (Virtual) (July 9–11, 2025)</div>
             <div class="list-item">• <strong>Royal Economic Society 2025 Annual Conference</strong> at the University of Birmingham, Birmingham (June 30 – July 2, 2025)</div>
-            <div class="list-item">• <strong>Global Business Research Conference 2025</strong> at the Indian Institute of Foreign Trade, New Delhi (March 26–28, 2025)</div>
-            <div class="list-item">• <strong>INET-YSI South Asia Regional Conference</strong> at the Institute for Social and Economic Change (ISEC), Bengaluru (February 24–26, 2025)</div>
-            <div class="list-item">• <strong>Australian Conference of Economists 2024</strong> at the University of Adelaide, Adelaide (July 10–12, 2024)</div>
-            <div class="list-item">• <strong>Meeting of Young Minds in Frontier of Economics 2024</strong> at the IIT Bombay, Mumbai (February 20–22, 2024)</div>
-            <div class="list-item">• <strong>18th Annual Conference on Economic Growth and Development</strong> at the Indian Statistical Institute, New Delhi (December 18–20, 2023)</div>
+            <div class="list-item">• <strong>Global Business Research Conference 2025</strong> at IIFT, New Delhi (March 26–28, 2025)</div>
+            <div class="list-item">• <strong>INET-YSI South Asia Regional Conference</strong> at ISEC, Bengaluru (February 24–26, 2025)</div>
+            <div class="list-item">• <strong>Australian Conference of Economists 2024</strong> at Univ. of Adelaide, Adelaide (July 10–12, 2024)</div>
+            <div class="list-item">• <strong>Meeting of Young Minds in Frontier of Economics 2024</strong> at IIT Bombay, Mumbai (February 20–22, 2024)</div>
+            <div class="list-item">• <strong>18th Annual Conference on Economic Growth and Development</strong> at ISI, New Delhi (December 18–20, 2023)</div>
             <div class="list-item">• <strong>Winter School 2023</strong> at the Delhi School of Economics, New Delhi (December 14–16, 2023)</div>
-            <div class="list-item">• <strong>Asian Meeting of the Econometric Society 2023</strong> at the Tsinghua University, Beijing (Virtual) (June 30 – July 2, 2023)</div>
-            <div class="list-item">• <strong>57th Annual Conference of The Indian Econometric Society</strong> at the University of Hyderabad (January 4–6, 2023)</div>
+            <div class="list-item">• <strong>Asian Meeting of the Econometric Society 2023</strong> at Tsinghua University (Virtual) (June 30 – July 2, 2023)</div>
+            <div class="list-item">• <strong>57th Annual Conference of The Indian Econometric Society</strong> at Univ. of Hyderabad (January 4–6, 2023)</div>
         </div>
     </section>
 
-    <section id="teaching" style="background-color: #ffffff;">
+    <section id="teaching">
         <div style="max-width: 900px; margin: 0 auto; width: 100%;">
             <h2>Teaching Assistance</h2>
             <div class="list-item">• <strong>Macroeconomics I</strong>, Undergraduate, 2026</div>
@@ -191,7 +190,7 @@
         </div>
     </section>
 
-    <section id="cv-viewer" style="background-color: #f1f5f9;">
+    <section id="cv-viewer">
         <div style="max-width: 1000px; margin: 0 auto; width: 100%;">
             <h2>Curriculum Vitae</h2>
             <a href="cv.pdf" class="cv-download-btn" target="_blank">
@@ -203,7 +202,7 @@
         </div>
     </section>
 
-    <section id="contact" style="background-color: #ffffff;">
+    <section id="contact">
         <div style="max-width: 900px; margin: 0 auto; width: 100%;">
             <h2>Contact</h2>
             <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 40px; margin-bottom: 50px;">
