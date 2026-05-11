@@ -3,97 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vinayak Krishnatri</title>
+    <title>Vinayak Krishnatri | PhD Scholar, IIT Kanpur</title>
+    
+    <meta name="description" content="Vinayak Krishnatri - PhD Scholar in Economic Sciences at IIT Kanpur. Specialized in Development and Health Economics.">
+    <meta name="keywords" content="Vinayak Krishnatri, Economics, IIT Kanpur, PhD, Health Economics, Development Economics">
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
     <style>
-        /* ADDED scroll-padding-top to prevent the fixed header from covering section titles */
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 90px; 
-        }
-
+        html { scroll-behavior: smooth; scroll-padding-top: 90px; }
         body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background-color: #f8faff; color: #1e293b; }
         
-        /* Nav Bar - Extreme Alignment */
+        /* Navigation */
         nav {
-            background-color: #2c3e50;
-            padding: 25px 5%; 
-            display: flex;
-            align-items: center;
-            position: fixed;
-            width: 100%;
-            box-sizing: border-box;
-            top: 0;
-            z-index: 1000;
+            background-color: #2c3e50; padding: 25px 5%; display: flex; align-items: center;
+            position: fixed; width: 100%; box-sizing: border-box; top: 0; z-index: 1000;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-
-        .nav-left {
-            font-weight: 800; font-size: 1.6rem; color: white; text-decoration: none; letter-spacing: -0.5px; margin-right: auto; 
-        }
-
+        .nav-left { font-weight: 800; font-size: 1.6rem; color: white; text-decoration: none; letter-spacing: -0.5px; margin-right: auto; }
         .nav-right { display: flex; gap: 35px; margin-left: auto; }
-        .nav-right a { 
-            color: #cbd5e1; 
-            text-decoration: none; 
-            font-weight: 600; 
-            font-size: 1.1rem; 
-            transition: color 0.3s ease; /* Smooth color transition for the links */
-        }
+        .nav-right a { color: #cbd5e1; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: color 0.3s ease; }
         .nav-right a:hover { color: white; }
 
         /* Section Styling */
-        section {
-            padding: 100px 10% 80px 10%; 
-            min-height: 60vh;
-        }
-
-        .main-container {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: center;
-            align-items: center; 
-            gap: 50px;
-        }
-
-        .profile-pic {
-            width: 320px; height: auto; border-radius: 4px; box-shadow: 0 10px 40px rgba(0,0,0,0.06);
-            border: 4px solid white; flex-shrink: 0; transform: translateY(-10px); 
-        }
-
+        section { padding: 100px 10% 80px 10%; min-height: 60vh; }
+        .main-container { max-width: 1100px; margin: 0 auto; display: flex; justify-content: center; align-items: center; gap: 50px; }
+        .profile-pic { width: 320px; height: auto; border-radius: 4px; box-shadow: 0 10px 40px rgba(0,0,0,0.06); border: 4px solid white; flex-shrink: 0; transform: translateY(-10px); }
         .bio-content { flex: 1; max-width: 650px; }
         .bio-content p { line-height: 1.8; font-size: 1.15rem; margin-bottom: 25px; color: #334155; text-align: justify; }
-
         h2 { font-size: 1.8rem; color: #2c3e50; border-bottom: 1px solid #000; padding-bottom: 10px; margin-bottom: 40px; }
-        
         .list-item { margin-bottom: 15px; line-height: 1.6; font-size: 1.05rem; }
 
-        /* CV Section Specific Styles */
-        .cv-container {
-            width: 100%;
-            height: 800px; 
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            overflow: hidden;
-            background: white;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        }
-
-        .cv-download-btn {
-            display: inline-block;
-            margin-bottom: 20px;
-            padding: 10px 20px;
-            background-color: #2c3e50;
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: 600;
-            transition: background 0.3s ease;
-        }
+        /* CV Section */
+        .cv-container { width: 100%; height: 800px; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; background: white; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .cv-download-btn { display: inline-block; margin-bottom: 20px; padding: 10px 20px; background-color: #2c3e50; color: white; text-decoration: none; border-radius: 4px; font-weight: 600; transition: background 0.3s ease; }
         .cv-download-btn:hover { background-color: #4f46e5; }
+
+        /* --- MOBILE RESPONSIVENESS --- */
+        @media (max-width: 850px) {
+            .main-container { flex-direction: column; text-align: center; gap: 30px; }
+            .profile-pic { width: 250px; transform: none; }
+            .nav-right { gap: 15px; }
+            .nav-right a { font-size: 0.9rem; }
+            .cv-container { height: 500px; }
+        }
     </style>
 </head>
 <body>
@@ -116,7 +70,7 @@
             <div class="bio-content">
                 <p>I am a PhD Scholar in Economics at the Department of Economic Sciences, IIT Kanpur, pursuing my doctoral research under the supervision of Dr. Sukumar Vellakkal. My research interests lie at the intersection of Development Economics, Health Economics, and Applied Econometrics.</p>
                 <p>My work utilizes rigorous empirical methods to evaluate how structural changes such as digital expansion, regulatory policies, and urbanization shape public health, nutrition, human capital, and food security at the micro-level in India.</p>
-                <p>I hold an M.A. in Economics from Jamia Millia Islamia and a B.A. (Hons.) in Economics from Ramjas College, University of Delhi.</p>
+                <p>I hold an M.A. in Economics from Jamia Millia Islamia and a B.A. (Hons.) from Ramjas College, University of Delhi.</p>
                 <p>Outside of academics, I am a passionate traveler who enjoys exploring new landscapes, observing wildlife, and discovering regional cuisines.</p>
             </div>
         </div>
@@ -133,7 +87,6 @@
                     with Sukumar Vellakkal. <strong>Agricultural Economics</strong>, 2026. 
                     <span style="font-size: 0.85rem; color: #94a3b8;">[ABDC: A, ABS: 2, SJR: Q1]</span>
                 </div>
-                <a href="https://doi.org/10.1111/agec.70090" target="_blank" style="color: #4f46e5; text-decoration: none; font-size: 0.85rem;">DOI: 10.1111/agec.70090</a>
             </div>
             <div style="margin-bottom: 35px; line-height: 1.6;">
                 <a href="https://doi.org/10.1016/j.telpol.2024.102872" target="_blank" style="font-size: 1.15rem; color: #1e293b; text-decoration: none; font-weight: 600; display: block; margin-bottom: 4px;">
@@ -143,7 +96,6 @@
                     with Sukumar Vellakkal. <strong>Telecommunications Policy</strong>, 2024. 
                     <span style="font-size: 0.85rem; color: #94a3b8;">[ABS: 1, SJR: Q1]</span>
                 </div>
-                <a href="https://doi.org/10.1016/j.telpol.2024.102872" target="_blank" style="color: #4f46e5; text-decoration: none; font-size: 0.85rem;">DOI: 10.1016/j.telpol.2024.102872</a>
             </div>
         </div>
     </section>
@@ -151,80 +103,11 @@
     <section id="conferences" style="background-color: #f1f5f9;">
         <div style="max-width: 900px; margin: 0 auto;">
             <h2>Conferences</h2>
-            <div class="list-item">• <strong>Asian Meeting of the Econometric Society 2026</strong> at New York University Abu Dhabi, Abu Dhabi (February 23–25, 2026)</div>
-            <div class="list-item">• <strong>7th Annual Economics Conference</strong> at Ahmedabad University, Ahmedabad (January 9–10, 2026)</div>
-            <div class="list-item">• <strong>INET-YSI International Conference on Structural Change, Youth Employability, and Inequality</strong> at the University of Hyderabad (November 27–28, 2025)</div>
-            <div class="list-item">• <strong>Young Scholars Conference</strong> at Centre for Economic Studies and Planning, JNU, New Delhi (October 9-10, 2025)</div>
-            <div class="list-item">• <strong>Eleventh Conference of the Society for the Study of Economic Inequality</strong> at the World Bank Headquarters, Washington, D.C. (Virtual) (July 9–11, 2025)</div>
-            <div class="list-item">• <strong>Royal Economic Society 2025 Annual Conference</strong> at the University of Birmingham, Birmingham (June 30 – July 2, 2025)</div>
-            <div class="list-item">• <strong>Global Business Research Conference 2025</strong> at the Indian Institute of Foreign Trade, New Delhi (March 26–28, 2025)</div>
-            <div class="list-item">• <strong>INET-YSI South Asia Regional Conference on Social Change</strong> at the Institute for Social and Economic Change (ISEC), Bengaluru (February 24–26, 2025)</div>
-            <div class="list-item">• <strong>Australian Conference of Economists 2024</strong> at the University of Adelaide, Adelaide (July 10–12, 2024)</div>
-            <div class="list-item">• <strong>Meeting of Young Minds in Frontier of Economics 2024</strong> at the IIT Bombay, Mumbai (February 20–22, 2024)</div>
-            <div class="list-item">• <strong>18th Annual Conference on Economic Growth and Development</strong> at the Indian Statistical Institute, New Delhi (December 18–20, 2023)</div>
-            <div class="list-item">• <strong>Winter School 2023</strong> at the Delhi School of Economics, New Delhi (December 14–16, 2023)</div>
-            <div class="list-item">• <strong>Asian Meeting of the Econometric Society 2023</strong> at the Tsinghua University, Beijing (Virtual) (June 30 – July 2, 2023)</div>
-            <div class="list-item">• <strong>57th Annual Conference of The Indian Econometric Society</strong> at the University of Hyderabad (January 4–6, 2023)</div>
+            <div class="list-item">• <strong>Asian Meeting of the Econometric Society 2026</strong> at NYU Abu Dhabi</div>
+            <div class="list-item">• <strong>Royal Economic Society 2025 Annual Conference</strong> at the University of Birmingham</div>
+            <div class="list-item">• <strong>Australian Conference of Economists 2024</strong> at the University of Adelaide</div>
         </div>
     </section>
 
     <section id="teaching" style="background-color: #ffffff;">
-        <div style="max-width: 900px; margin: 0 auto;">
-            <h2>Teaching Assistance</h2>
-            <div class="list-item">• <strong>Macroeconomics I</strong>, Undergraduate, 2026</div>
-            <div class="list-item">• <strong>Economics of Banking and Financial Markets</strong>, NPTEL course, 2025</div>
-            <div class="list-item">• <strong>Empirical Methods in Health Economics and Public Policy</strong>, Postgraduate, 2025</div>
-            <div class="list-item">• <strong>Applied Probability and Statistics</strong>, Undergraduate and Postgraduate, 2025</div>
-            <div class="list-item">• <strong>Macroeconomics I</strong>, Undergraduate, 2025</div>
-            <div class="list-item">• <strong>Economics of Banking and Financial Markets</strong>, NPTEL course, 2024</div>
-            <div class="list-item">• <strong>Macroeconomics II</strong>, Undergraduate, 2024</div>
-            <div class="list-item">• <strong>Economy, Society, and Public Policy</strong>, Undergraduate, 2024</div>
-            <div class="list-item">• <strong>Applied Probability and Statistics</strong>, Undergraduate and Postgraduate, 2023</div>
-            <div class="list-item">• <strong>Money and Banking</strong>, Undergraduate and Postgraduate, 2023</div>
-            <div class="list-item">• <strong>Economics of Banking and Financial Markets</strong>, NPTEL course, 2023</div>
-            <div class="list-item">• <strong>Game Theory</strong>, Undergraduate, 2022</div>
-            <div class="list-item">• <strong>Quantitative Analysis of International Trade</strong>, Undergraduate and Postgraduate, 2022</div>
-        </div>
-    </section>
-
-    <section id="cv-viewer" style="background-color: #f1f5f9;">
-        <div style="max-width: 1000px; margin: 0 auto;">
-            <h2>Curriculum Vitae</h2>
-            <a href="cv.pdf" class="cv-download-btn" target="_blank">
-                <i class="fa-solid fa-file-arrow-down"></i> Download PDF
-            </a>
-            <div class="cv-container">
-                <iframe src="cv.pdf#toolbar=0" width="100%" height="100%" style="border: none;"></iframe>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" style="padding-bottom: 120px; background-color: #ffffff;">
-        <div style="max-width: 900px; margin: 0 auto;">
-            <h2 style="font-size: 1.8rem; border-bottom: 1px solid #000; padding-bottom: 10px; margin-bottom: 40px;">Contact</h2>
-            <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 40px; margin-bottom: 50px;">
-                <div style="display: flex; align-items: center; gap: 10px;">
-                    <i class="fa-solid fa-envelope" style="font-size: 1.2rem; color: #2c3e50;"></i>
-                    <a href="mailto:vinayakk20@iitk.ac.in" style="font-size: 1.1rem; color: #1e293b; text-decoration: none;">Email (vinayakk20@iitk.ac.in)</a>
-                </div>
-                <div style="display: flex; align-items: center; gap: 10px;">
-                    <i class="fa-brands fa-linkedin" style="font-size: 1.2rem; color: #0077b5;"></i>
-                    <a href="https://www.linkedin.com/in/vinayak-krishnatri-408b60188/" target="_blank" style="font-size: 1.1rem; color: #1e293b; text-decoration: none;">LinkedIn Profile</a>
-                </div>
-                <div style="display: flex; align-items: center; gap: 10px;">
-                    <i class="fa-solid fa-graduation-cap" style="font-size: 1.2rem; color: #4285f4;"></i>
-                    <a href="https://scholar.google.com/citations?user=W-l1VnIAAAAJ&hl=en&oi=ao" target="_blank" style="font-size: 1.1rem; color: #1e293b; text-decoration: none;">Google Scholar Profile</a>
-                </div>
-            </div>
-            <div style="padding-top: 30px; border-top: 1px solid #e2e8f0;">
-                <h3 style="font-size: 1.3rem; color: #2c3e50; margin-bottom: 15px;">Address</h3>
-                <p style="font-size: 1rem; color: #64748b; line-height: 1.6; margin: 0;">
-                    Department of Economic Sciences<br>
-                    Indian Institute of Technology Kanpur<br>
-                    Uttar Pradesh, India - 208016
-                </p>
-            </div>
-        </div>
-    </section>
-</body>
-</html>
+        <div style="max-width: 900px; margin: 0
