@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
     <style>
-        html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+        html { scroll-behavior: smooth; }
         body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background-color: #f8faff; color: #1e293b; overflow-x: hidden; }
         
         /* Navigation */
@@ -25,29 +25,36 @@
         .nav-right a { color: #cbd5e1; text-decoration: none; font-weight: 600; font-size: 1rem; transition: 0.3s; }
         .nav-right a:hover { color: white; }
 
-        /* Section Layout */
-section { 
-    display: block; 
-    width: 100%; 
-    box-sizing: border-box; 
-    min-height: 40vh;
+        /* The Anchor Fix: This creates an invisible landing spot for the browser */
+        section::before {
+            content: "";
+            display: block;
+            height: 120px; /* Adjust this to control how much space is above the title */
+            margin-top: -120px;
+            visibility: hidden;
+            pointer-events: none;
+        }
 
-    /* This is the magic part: */
-    padding: 60px 10% 80px 10%; /* Reduced top padding slightly */
-    margin-top: -100px;         /* Pulls the section up */
-    border-top: 100px solid transparent; /* Pushes the content back down, leaving an invisible 'landing zone' */
-    background-clip: padding-box; /* Ensures the background color doesn't bleed into the transparent border */
-}
+        /* Section Layout */
+        section { padding: 80px 10% 80px 10%; display: block; width: 100%; box-sizing: border-box; min-height: 40vh; }
         
-.profile-pic { 
-    width: 320px; 
-    height: auto; 
-    border-radius: 4px; 
-    border: 4px solid white; 
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
-    flex-shrink: 0; 
-    margin-top: -15px; /* Reduced from -40px to find the middle ground */
-}
+        .main-container { 
+            max-width: 1100px; 
+            margin: 0 auto; 
+            display: flex; 
+            align-items: center; 
+            gap: 50px; 
+        }
+        
+        .profile-pic { 
+            width: 320px; 
+            height: auto; 
+            border-radius: 4px; 
+            border: 4px solid white; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+            flex-shrink: 0; 
+            margin-top: -15px; 
+        }
         
         .bio-content { flex: 1; max-width: 650px; }
         .bio-content p { line-height: 1.8; font-size: 1.15rem; margin-bottom: 25px; color: #334155; text-align: justify; }
@@ -65,7 +72,8 @@ section {
             .nav-right { justify-content: center; width: 100%; gap: 15px; }
             .main-container { flex-direction: column; align-items: center; text-align: center; gap: 30px; }
             .profile-pic { width: 250px; }
-            section { padding: 180px 5% 60px 5%; } 
+            section::before { height: 180px; margin-top: -180px; } /* More space for the taller mobile nav */
+            section { padding: 60px 5% 60px 5%; } 
             .cv-container { height: 500px; }
         }
     </style>
@@ -90,7 +98,7 @@ section {
             <div class="bio-content">
                 <p>I am a PhD Scholar in Economics at the Department of Economic Sciences, IIT Kanpur, pursuing my doctoral research under the supervision of Dr. Sukumar Vellakkal. My research interests lie at the intersection of Development Economics, Health Economics, and Applied Econometrics.</p>
                 <p>My work utilizes rigorous empirical methods to evaluate how structural changes such as digital expansion, regulatory policies, and urbanization shape public health, nutrition, human capital, and food security at the micro-level in India.</p>
-                <p>I hold an M.A. in Economics from Jamia Millia Islamia and a B.A. (Hons.) from Ramjas College, University of Delhi.</p>
+                <p>I hold an M.A. in Economics from Jamia Millia Islamia and a B.A. (Hons.) in Economics from Ramjas College, University of Delhi.</p>
                 <p>Outside of academics, I am a passionate traveler who enjoys exploring new landscapes, observing wildlife, and discovering regional cuisines.</p>
             </div>
         </div>
@@ -165,8 +173,7 @@ section {
         <div style="max-width: 1000px; margin: 0 auto;">
             <h2>Curriculum Vitae</h2>
             <a href="cv.pdf" class="cv-download-btn" target="_blank">
-                <i class="fa-solid fa-file-arrow-down"></i> Download PDF
-            </a>
+                <i class="fa-solid fa-file-arrow-down"></i> Download PDF            </a>
             <div class="cv-container">
                 <iframe src="cv.pdf#toolbar=0" width="100%" height="100%" style="border: none;"></iframe>
             </div>
@@ -199,6 +206,4 @@ section {
                 </p>
             </div>
         </div>
-    </section>
-</body>
-</html>
+    </section></body></html>
