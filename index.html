@@ -9,9 +9,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
     <style>
+        /* This is the magic fix for all tabs/scrolling issues */
         html { 
             scroll-behavior: smooth; 
+            scroll-padding-top: 100px; /* Laptop buffer */
         }
+        
         body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background-color: #f8faff; color: #1e293b; overflow-x: hidden; }
         
         /* Navigation */
@@ -25,10 +28,8 @@
         .nav-right a { color: #cbd5e1; text-decoration: none; font-weight: 600; font-size: 1rem; transition: 0.3s; }
         .nav-right a:hover { color: white; }
 
-        /* Global Section Landing Fix */
+        /* Standard Section Layout */
         section { 
-            /* This solves the congestion on laptop */
-            scroll-margin-top: 130px; 
             padding: 80px 10% 80px 10%; 
             display: flex; 
             flex-direction: column;
@@ -37,12 +38,12 @@
             min-height: 100vh; 
         }
 
-        /* Home Section: Center content with top-buffer for Laptop */
+        /* Home Section Fix: We use Flexbox to center, but remove large paddings */
         #home {
             justify-content: center; 
             align-items: center;     
             min-height: 100vh;
-            padding-top: 150px; 
+            padding-top: 0; /* Resetting this to let centering do the work */
         }
         
         .main-container { 
@@ -75,21 +76,21 @@
         .cv-download-btn:hover { background-color: #4f46e5; }
 
         @media (max-width: 900px) {
+            /* Adjust the landing spot for Mobile because the nav is taller */
+            html { 
+                scroll-padding-top: 220px; 
+            }
+
             nav { justify-content: center; text-align: center; padding: 15px 5%; }
-            .nav-left { width: 100%; margin-bottom: 10px; padding: 0; }
+            .nav-left { width: 100%; margin-bottom: 15px; padding: 0; }
             .nav-right { justify-content: center; width: 100%; gap: 12px; }
             
-            /* The Phone Fix: Huge landing buffer to clear the 2-line nav bar */
-            section { 
-                scroll-margin-top: 240px !important; 
-                padding: 40px 5% 40px 5%; 
-                min-height: auto; 
-            } 
-            
             .main-container { flex-direction: column; align-items: center; text-align: center; gap: 30px; }
-            .profile-pic { width: 250px; }
+            .profile-pic { width: 220px; }
             .bio-content { text-align: left; }
-            #home { min-height: auto; padding-top: 250px; }
+            
+            section { padding: 40px 5% 40px 5%; min-height: auto; } 
+            #home { min-height: auto; padding-top: 240px; } /* Pushes home down just enough to be clear */
             .cv-container { height: 500px; }
         }
     </style>
@@ -155,14 +156,14 @@
             <div class="list-item">• <strong>Young Scholars Conference</strong> at Centre for Economic Studies and Planning, JNU, New Delhi (October 9-10, 2025)</div>
             <div class="list-item">• <strong>Society for the Study of Economic Inequality</strong> at the World Bank Headquarters, Washington, D.C. (Virtual) (July 9–11, 2025)</div>
             <div class="list-item">• <strong>Royal Economic Society 2025 Annual Conference</strong> at the University of Birmingham, Birmingham (June 30 – July 2, 2025)</div>
-            <div class="list-item">• <strong>Global Business Research Conference 2025</strong> at IIFT, New Delhi (March 26–28, 2025)</div>
-            <div class="list-item">• <strong>INET-YSI South Asia Regional Conference</strong> at ISEC, Bengaluru (February 24–26, 2025)</div>
-            <div class="list-item">• <strong>Australian Conference of Economists 2024</strong> at Univ. of Adelaide, Adelaide (July 10–12, 2024)</div>
-            <div class="list-item">• <strong>Meeting of Young Minds in Frontier of Economics 2024</strong> at IIT Bombay, Mumbai (February 20–22, 2024)</div>
-            <div class="list-item">• <strong>18th Annual Conference on Economic Growth and Development</strong> at ISI, New Delhi (December 18–20, 2023)</div>
+            <div class="list-item">• <strong>Global Business Research Conference 2025</strong> at the Indian Institute of Foreign Trade, New Delhi (March 26–28, 2025)</div>
+            <div class="list-item">• <strong>INET-YSI South Asia Regional Conference</strong> at the Institute for Social and Economic Change (ISEC), Bengaluru (February 24–26, 2025)</div>
+            <div class="list-item">• <strong>Australian Conference of Economists 2024</strong> at the University of Adelaide, Adelaide (July 10–12, 2024)</div>
+            <div class="list-item">• <strong>Meeting of Young Minds in Frontier of Economics 2024</strong> at the IIT Bombay, Mumbai (February 20–22, 2024)</div>
+            <div class="list-item">• <strong>18th Annual Conference on Economic Growth and Development</strong> at the Indian Statistical Institute, New Delhi (December 18–20, 2023)</div>
             <div class="list-item">• <strong>Winter School 2023</strong> at the Delhi School of Economics, New Delhi (December 14–16, 2023)</div>
-            <div class="list-item">• <strong>Asian Meeting of the Econometric Society 2023</strong> at Tsinghua University (Virtual) (June 30 – July 2, 2023)</div>
-            <div class="list-item">• <strong>57th Annual Conference of The Indian Econometric Society</strong> at Univ. of Hyderabad (January 4–6, 2023)</div>
+            <div class="list-item">• <strong>Asian Meeting of the Econometric Society 2023</strong> at the Tsinghua University, Beijing (Virtual) (June 30 – July 2, 2023)</div>
+            <div class="list-item">• <strong>57th Annual Conference of The Indian Econometric Society</strong> at the University of Hyderabad (January 4–6, 2023)</div>
         </div>
     </section>
 
