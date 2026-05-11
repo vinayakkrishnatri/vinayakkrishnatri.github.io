@@ -70,22 +70,26 @@
         }
 
         /* Home Section: Perfect vertical centering */
-        #home {
-            justify-content: center; 
-            align-items: center;     
-            min-height: 100vh;
-            padding: 0 10%; 
-        }
-        
-        .main-container { 
-            max-width: 1100px; 
-            margin: 0 auto; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            gap: 60px; 
-            width: 100%;
-        }
+#home {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Switch to start to control the gap manually */
+    align-items: center;     
+    min-height: 100vh;
+    padding: 0 10%;          
+}
+
+.main-container { 
+    max-width: 1100px; 
+    margin: 0 auto; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    gap: 60px; 
+    width: 100%;
+    /* This adds the specific gap you need at the top */
+    margin-top: 120px; 
+}
         
         .profile-pic { 
             width: 320px; 
