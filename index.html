@@ -9,7 +9,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
     <style>
-        html { scroll-behavior: smooth; }
+        html { 
+            scroll-behavior: smooth; 
+            /* This tells the browser to stop 120px above the section title */
+            scroll-margin-top: 120px; 
+        }
         body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background-color: #f8faff; color: #1e293b; overflow-x: hidden; }
         
         /* Navigation */
@@ -23,19 +27,11 @@
         .nav-right a { color: #cbd5e1; text-decoration: none; font-weight: 600; font-size: 1rem; transition: 0.3s; }
         .nav-right a:hover { color: white; }
 
-        /* The Anchor Fix: Ensures headings don't hide under the fixed nav */
-        section::before {
-            content: "";
-            display: block;
-            height: 120px; /* Buffer space for Desktop */
-            margin-top: -120px;
-            visibility: hidden;
-            pointer-events: none;
-        }
-
-        /* Standard Section Layout */
+        /* Modern Section Landing Fix */
         section { 
-            padding: 40px 10% 80px 10%; 
+            /* This ensures that when you click a link, the browser lands 130px early */
+            scroll-margin-top: 130px; 
+            padding: 80px 10% 80px 10%; 
             display: flex; 
             flex-direction: column;
             width: 100%; 
@@ -43,12 +39,12 @@
             min-height: 100vh; 
         }
 
-        /* Home Section Fixes */
+        /* Home Section: Perfect Centering with top-buffer */
         #home {
             justify-content: center; 
             align-items: center;     
             min-height: 100vh;
-            padding-top: 100px; /* Adds space under the nav on laptop */
+            padding-top: 120px; /* Forces bio down from the header on laptop */
         }
         
         .main-container { 
@@ -85,18 +81,17 @@
             .nav-left { width: 100%; margin-bottom: 15px; padding: 0; }
             .nav-right { justify-content: center; width: 100%; gap: 12px; }
             
-            /* Crucial Mobile Fix: Increased Anchor height so titles aren't hidden */
-            section::before { 
-                height: 200px; 
-                margin-top: -200px; 
+            /* Mobile Landing Buffer: Landing 180px early on phones */
+            section { 
+                scroll-margin-top: 180px; 
+                padding: 40px 5% 40px 5%; 
+                min-height: auto; 
             } 
             
             .main-container { flex-direction: column; align-items: center; text-align: center; gap: 30px; }
             .profile-pic { width: 250px; }
             .bio-content { text-align: left; }
-            
-            section { padding: 40px 5% 40px 5%; min-height: auto; } 
-            #home { min-height: auto; padding-top: 220px; } /* Pushes home content down on mobile */
+            #home { min-height: auto; padding-top: 200px; }
             .cv-container { height: 500px; }
         }
     </style>
