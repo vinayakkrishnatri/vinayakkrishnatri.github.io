@@ -5,47 +5,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vinayak Krishnatri | PhD Scholar, IIT Kanpur</title>
     
-    <meta name="description" content="Vinayak Krishnatri - PhD Scholar in Economic Sciences at IIT Kanpur. Specialized in Development and Health Economics.">
-    <meta name="keywords" content="Vinayak Krishnatri, Economics, IIT Kanpur, PhD, Health Economics, Development Economics">
-
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
     <style>
-        html { scroll-behavior: smooth; scroll-padding-top: 90px; }
-        body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background-color: #f8faff; color: #1e293b; }
+        html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+        body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background-color: #f8faff; color: #1e293b; overflow-x: hidden; }
         
-        /* Navigation */
+        /* Navigation - Optimized for wrapping */
         nav {
-            background-color: #2c3e50; padding: 25px 5%; display: flex; align-items: center;
-            position: fixed; width: 100%; box-sizing: border-box; top: 0; z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background-color: #2c3e50;
+            padding: 20px 5%;
+            display: flex;
+            flex-wrap: wrap; /* Allows tabs to drop to next line if screen is too small */
+            align-items: center;
+            justify-content: space-between;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 2000;
+            box-sizing: border-box;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
         }
-        .nav-left { font-weight: 800; font-size: 1.6rem; color: white; text-decoration: none; letter-spacing: -0.5px; margin-right: auto; }
-        .nav-right { display: flex; gap: 35px; margin-left: auto; }
-        .nav-right a { color: #cbd5e1; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: color 0.3s ease; }
+        .nav-left { font-weight: 800; font-size: 1.4rem; color: white; text-decoration: none; padding-right: 20px; }
+        .nav-right { display: flex; flex-wrap: wrap; gap: 20px; }
+        .nav-right a { color: #cbd5e1; text-decoration: none; font-weight: 600; font-size: 1rem; transition: 0.3s; }
         .nav-right a:hover { color: white; }
 
-        /* Section Styling */
-        section { padding: 100px 10% 80px 10%; min-height: 60vh; }
-        .main-container { max-width: 1100px; margin: 0 auto; display: flex; justify-content: center; align-items: center; gap: 50px; }
-        .profile-pic { width: 320px; height: auto; border-radius: 4px; box-shadow: 0 10px 40px rgba(0,0,0,0.06); border: 4px solid white; flex-shrink: 0; transform: translateY(-10px); }
-        .bio-content { flex: 1; max-width: 650px; }
-        .bio-content p { line-height: 1.8; font-size: 1.15rem; margin-bottom: 25px; color: #334155; text-align: justify; }
-        h2 { font-size: 1.8rem; color: #2c3e50; border-bottom: 1px solid #000; padding-bottom: 10px; margin-bottom: 40px; }
-        .list-item { margin-bottom: 15px; line-height: 1.6; font-size: 1.05rem; }
+        /* General Section Layout */
+        section { 
+            padding: 120px 10% 80px 10%; 
+            display: block; /* Ensures section is never hidden */
+            width: 100%;
+            box-sizing: border-box;
+        }
 
-        /* CV Section */
-        .cv-container { width: 100%; height: 800px; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; background: white; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-        .cv-download-btn { display: inline-block; margin-bottom: 20px; padding: 10px 20px; background-color: #2c3e50; color: white; text-decoration: none; border-radius: 4px; font-weight: 600; transition: background 0.3s ease; }
-        .cv-download-btn:hover { background-color: #4f46e5; }
+        .main-container { 
+            max-width: 1100px; 
+            margin: 0 auto; 
+            display: flex; 
+            align-items: flex-start; 
+            gap: 50px; 
+        }
 
-        /* --- MOBILE RESPONSIVENESS --- */
-        @media (max-width: 850px) {
-            .main-container { flex-direction: column; text-align: center; gap: 30px; }
-            .profile-pic { width: 250px; transform: none; }
-            .nav-right { gap: 15px; }
-            .nav-right a { font-size: 0.9rem; }
+        .profile-pic { 
+            width: 300px; 
+            height: auto; 
+            border-radius: 4px; 
+            border: 4px solid white; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+            flex-shrink: 0; 
+        }
+
+        .bio-content { flex: 1; }
+        .bio-content p { line-height: 1.8; font-size: 1.1rem; margin-bottom: 20px; color: #334155; text-align: justify; }
+
+        h2 { font-size: 1.8rem; color: #2c3e50; border-bottom: 2px solid #2c3e50; padding-bottom: 10px; margin-bottom: 30px; width: 100%; }
+        .list-item { margin-bottom: 15px; line-height: 1.6; font-size: 1.05rem; list-style: none; }
+
+        /* CV Viewer */
+        .cv-container { width: 100%; height: 800px; border: 1px solid #ddd; background: #fff; margin-top: 20px; }
+
+        /* Responsive Fixes */
+        @media (max-width: 900px) {
+            nav { justify-content: center; text-align: center; }
+            .nav-left { width: 100%; margin-bottom: 10px; padding: 0; }
+            .nav-right { justify-content: center; width: 100%; gap: 15px; }
+            
+            .main-container { flex-direction: column; align-items: center; text-align: center; }
+            .profile-pic { width: 220px; }
+            section { padding: 140px 5% 60px 5%; } /* Extra padding for the taller wrapped nav */
             .cv-container { height: 500px; }
         }
     </style>
@@ -68,10 +97,9 @@
         <div class="main-container">
             <img src="photowebsite.jpg" alt="Vinayak Krishnatri" class="profile-pic">
             <div class="bio-content">
-                <p>I am a PhD Scholar in Economics at the Department of Economic Sciences, IIT Kanpur, pursuing my doctoral research under the supervision of Dr. Sukumar Vellakkal. My research interests lie at the intersection of Development Economics, Health Economics, and Applied Econometrics.</p>
-                <p>My work utilizes rigorous empirical methods to evaluate how structural changes such as digital expansion, regulatory policies, and urbanization shape public health, nutrition, human capital, and food security at the micro-level in India.</p>
-                <p>I hold an M.A. in Economics from Jamia Millia Islamia and a B.A. (Hons.) from Ramjas College, University of Delhi.</p>
-                <p>Outside of academics, I am a passionate traveler who enjoys exploring new landscapes, observing wildlife, and discovering regional cuisines.</p>
+                <p>I am a PhD Scholar in Economics at the Department of Economic Sciences, IIT Kanpur. My research focuses on Development Economics, Health Economics, and Applied Econometrics, specifically within the Indian context.</p>
+                <p>My work evaluates how structural changes—like digital expansion and regulatory policies—impact public health, nutrition, and food security.</p>
+                <p>I hold an M.A. from Jamia Millia Islamia and a B.A. (Hons.) from Ramjas College, University of Delhi.</p>
             </div>
         </div>
     </section>
@@ -79,23 +107,13 @@
     <section id="research" style="background-color: #ffffff;">
         <div style="max-width: 900px; margin: 0 auto;">
             <h2>Publications</h2>
-            <div style="margin-bottom: 35px; line-height: 1.6;">
-                <a href="https://doi.org/10.1111/agec.70090" target="_blank" style="font-size: 1.15rem; color: #1e293b; text-decoration: none; font-weight: 600; display: block; margin-bottom: 4px;">
-                    Does Alcohol Prohibition Improve Caloric and Macronutrient Intake From Healthy Food Sources? Evidence From Bihar, India
-                </a>
-                <div style="font-size: 1rem; color: #475569;">
-                    with Sukumar Vellakkal. <strong>Agricultural Economics</strong>, 2026. 
-                    <span style="font-size: 0.85rem; color: #94a3b8;">[ABDC: A, ABS: 2, SJR: Q1]</span>
-                </div>
+            <div class="list-item">
+                <strong>Does Alcohol Prohibition Improve Caloric and Macronutrient Intake From Healthy Food Sources?</strong><br>
+                <em>Agricultural Economics</em>, 2026. <a href="https://doi.org/10.1111/agec.70090" target="_blank">[DOI Link]</a>
             </div>
-            <div style="margin-bottom: 35px; line-height: 1.6;">
-                <a href="https://doi.org/10.1016/j.telpol.2024.102872" target="_blank" style="font-size: 1.15rem; color: #1e293b; text-decoration: none; font-weight: 600; display: block; margin-bottom: 4px;">
-                    Does affordable Internet promote maternal and child healthcare access? Evidence from a post-telecommunication market disruption period in India
-                </a>
-                <div style="font-size: 1rem; color: #475569;">
-                    with Sukumar Vellakkal. <strong>Telecommunications Policy</strong>, 2024. 
-                    <span style="font-size: 0.85rem; color: #94a3b8;">[ABS: 1, SJR: Q1]</span>
-                </div>
+            <div class="list-item" style="margin-top: 25px;">
+                <strong>Does affordable Internet promote maternal and child healthcare access?</strong><br>
+                <em>Telecommunications Policy</em>, 2024. <a href="https://doi.org/10.1016/j.telpol.2024.102872" target="_blank">[DOI Link]</a>
             </div>
         </div>
     </section>
@@ -103,11 +121,40 @@
     <section id="conferences" style="background-color: #f1f5f9;">
         <div style="max-width: 900px; margin: 0 auto;">
             <h2>Conferences</h2>
-            <div class="list-item">• <strong>Asian Meeting of the Econometric Society 2026</strong> at NYU Abu Dhabi</div>
-            <div class="list-item">• <strong>Royal Economic Society 2025 Annual Conference</strong> at the University of Birmingham</div>
-            <div class="list-item">• <strong>Australian Conference of Economists 2024</strong> at the University of Adelaide</div>
+            <div class="list-item">• <strong>Asian Meeting of the Econometric Society 2026</strong>, Abu Dhabi</div>
+            <div class="list-item">• <strong>Royal Economic Society 2025 Annual Conference</strong>, Birmingham</div>
+            <div class="list-item">• <strong>Australian Conference of Economists 2024</strong>, Adelaide</div>
         </div>
     </section>
 
     <section id="teaching" style="background-color: #ffffff;">
-        <div style="max-width: 900px; margin: 0
+        <div style="max-width: 900px; margin: 0 auto;">
+            <h2>Teaching Assistance</h2>
+            <div class="list-item">• <strong>Macroeconomics I</strong>, 2026</div>
+            <div class="list-item">• <strong>Economics of Banking and Financial Markets</strong>, 2025</div>
+            <div class="list-item">• <strong>Applied Probability and Statistics</strong>, 2025</div>
+            <div class="list-item">• <strong>Game Theory</strong>, 2022</div>
+        </div>
+    </section>
+
+    <section id="cv-viewer" style="background-color: #f1f5f9;">
+        <div style="max-width: 900px; margin: 0 auto;">
+            <h2>Curriculum Vitae</h2>
+            <a href="cv.pdf" class="cv-download-btn" style="background: #2c3e50; color: white; padding: 10px 15px; text-decoration: none; border-radius: 4px; display: inline-block; margin-bottom: 15px;" target="_blank">Download PDF</a>
+            <div class="cv-container">
+                <iframe src="cv.pdf#toolbar=0" width="100%" height="100%" style="border: none;"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" style="background-color: #ffffff;">
+        <div style="max-width: 900px; margin: 0 auto;">
+            <h2>Contact</h2>
+            <p><i class="fa-solid fa-envelope"></i> <a href="mailto:vinayakk20@iitk.ac.in" style="color: inherit; text-decoration: none;">vinayakk20@iitk.ac.in</a></p>
+            <p><i class="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/vinayak-krishnatri-408b60188/" target="_blank" style="color: inherit; text-decoration: none;">LinkedIn Profile</a></p>
+            <p><i class="fa-solid fa-graduation-cap"></i> <a href="https://scholar.google.com/citations?user=W-l1VnIAAAAJ&hl=en&oi=ao" target="_blank" style="color: inherit; text-decoration: none;">Google Scholar</a></p>
+        </div>
+    </section>
+
+</body>
+</html>
