@@ -12,7 +12,7 @@
         /* Modern scrolling logic */
         html { 
             scroll-behavior: smooth; 
-            scroll-padding-top: 80px; /* Offset for the fixed header */
+            scroll-padding-top: 80px; 
         }
         
         body { 
@@ -74,9 +74,9 @@
         .nav-right a { color: #cbd5e1; text-decoration: none; font-weight: 600; font-size: 1rem; transition: 0.3s; }
         .nav-right a:hover { color: white; }
 
-        /* Standard Section Layout */
+        /* Global Section Layout - Widened to 1400px */
         section { 
-            padding: 60px 10% 80px 10%; 
+            padding: 80px 5%; 
             display: flex; 
             flex-direction: column;
             width: 100%; 
@@ -84,20 +84,25 @@
             min-height: 100vh; 
         }
 
-        /* Home Section Spacing */
+        .content-wrapper {
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* Home Section: Balanced & Wide */
         #home {
             justify-content: center; 
             align-items: center;     
             min-height: 100vh;
-            padding: 0 10%;          
         }
         
         .main-container { 
-            max-width: 1100px; 
-            margin: 120px auto 40px auto; /* Adds the specific gap you need at the top */
+            max-width: 1400px; 
+            margin: 100px auto 40px auto; 
             display: flex; 
-            align-items: center; 
-            justify-content: center; 
+            align-items: flex-start; /* Aligns bio text to top of photo */
+            justify-content: flex-start; 
             gap: 60px; 
             width: 100%;
         }
@@ -111,7 +116,7 @@
             flex-shrink: 0; 
         }
         
-        .bio-content { flex: 1; max-width: 600px; }
+        .bio-content { flex: 1; }
         .bio-content p { line-height: 1.8; font-size: 1.15rem; margin-bottom: 25px; color: #334155; text-align: justify; }
 
         h2 { 
@@ -123,7 +128,7 @@
             width: 100%; 
         }
         
-        .list-item { margin-bottom: 15px; line-height: 1.6; font-size: 1.05rem; }
+        .list-item { margin-bottom: 15px; line-height: 1.6; font-size: 1.1rem; }
 
         .cv-download-btn { 
             display: inline-block; 
@@ -139,7 +144,7 @@
         }
         .cv-download-btn:hover { background-color: #4f46e5; }
 
-        .cv-container { width: 100%; height: 800px; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; background: white; }
+        .cv-container { width: 100%; height: 900px; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; background: white; }
 
         /* MOBILE OPTIMIZATION */
         @media (max-width: 900px) {
@@ -148,7 +153,7 @@
             .nav-right {
                 position: absolute;
                 top: 100%;
-                right: -100%; /* Hidden off-screen */
+                right: -100%;
                 flex-direction: column;
                 background-color: #2c3e50;
                 width: 100%;
@@ -159,17 +164,17 @@
                 gap: 15px;
             }
 
-            .nav-right.active { right: 0; } /* Slides in */
+            .nav-right.active { right: 0; }
 
             section { padding: 40px 5% 40px 5%; min-height: auto; } 
             
             #home { 
                 min-height: auto; 
-                padding-top: 140px; 
+                padding-top: 100px; 
                 padding-bottom: 60px; 
             } 
 
-            .main-container { flex-direction: column; align-items: center; text-align: center; gap: 30px; margin-top: 0; }
+            .main-container { flex-direction: column; align-items: center; text-align: center; gap: 30px; margin-top: 40px; }
             .profile-pic { width: 220px; }
             .bio-content { text-align: left; }
             .cv-container { height: 500px; }
@@ -183,13 +188,11 @@
             <img src="IIT_Kanpur_Logo.jpg" alt="IITK Logo" class="IIT_Kanpur_Logo">
             <span class="nav-text">Vinayak Krishnatri</span>
         </a>
-
         <div class="hamburger" id="hamburger">
             <span></span>
             <span></span>
             <span></span>
         </div>
-
         <div class="nav-right" id="nav-links">
             <a href="#home">Home</a>
             <a href="#research">Research</a>
@@ -213,7 +216,7 @@
     </section>
 
     <section id="research">
-        <div style="max-width: 900px; margin: 0 auto; width: 100%;">
+        <div class="content-wrapper">
             <h2>Publications</h2>
             <div style="margin-bottom: 35px; line-height: 1.6;">
                 <a href="https://doi.org/10.1111/agec.70090" target="_blank" style="font-size: 1.15rem; color: #1e293b; text-decoration: none; font-weight: 600; display: block; margin-bottom: 4px;">
@@ -239,7 +242,7 @@
     </section>
 
     <section id="conferences">
-        <div style="max-width: 900px; margin: 0 auto; width: 100%;">
+        <div class="content-wrapper">
             <h2>Conferences</h2>
             <div class="list-item">• <strong>Asian Meeting of the Econometric Society 2026</strong> at NYU Abu Dhabi (February 23–25, 2026)</div>
             <div class="list-item">• <strong>7th Annual Economics Conference</strong> at Ahmedabad University (January 9–10, 2026)</div>
@@ -253,13 +256,13 @@
             <div class="list-item">• <strong>Meeting of Young Minds in Frontier of Economics 2024</strong> at IIT Bombay (February 20–22, 2024)</div>
             <div class="list-item">• <strong>18th Annual Conference on Economic Growth and Development</strong> at ISI, New Delhi (December 18–20, 2023)</div>
             <div class="list-item">• <strong>Winter School 2023</strong> at Delhi School of Economics (December 14–16, 2023)</div>
-            <div class="list-item">• <strong>Asian Meeting of the Econometric Society 2023</strong> at Tsinghua University (Virtual) (June 30 – July 2, 2023)</div>
+            <div class="list-item">• <strong>Asian Meeting of the Econometric Society 2023</strong> at Tsinghua University (June 30 – July 2, 2023)</div>
             <div class="list-item">• <strong>57th Annual Conference of The Indian Econometric Society</strong> at Univ. of Hyderabad (January 4–6, 2023)</div>
         </div>
     </section>
 
     <section id="teaching">
-        <div style="max-width: 900px; margin: 0 auto; width: 100%;">
+        <div class="content-wrapper">
             <h2>Teaching Assistance</h2>
             <div class="list-item">• <strong>Macroeconomics I</strong>, Undergraduate, 2026</div>
             <div class="list-item">• <strong>Economics of Banking and Financial Markets</strong>, NPTEL, 2025</div>
@@ -278,7 +281,7 @@
     </section>
 
     <section id="cv-viewer">
-        <div style="max-width: 1000px; margin: 0 auto; width: 100%;">
+        <div class="content-wrapper">
             <h2>Curriculum Vitae</h2>
             <a href="cv.pdf" class="cv-download-btn" target="_blank">
                 <i class="fa-solid fa-file-arrow-down"></i> Download PDF
@@ -290,7 +293,7 @@
     </section>
 
     <section id="contact">
-        <div style="max-width: 900px; margin: 0 auto; width: 100%;">
+        <div class="content-wrapper">
             <h2>Contact</h2>
             <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 40px; margin-bottom: 50px;">
                 <div style="display: flex; align-items: center; gap: 10px;">
@@ -321,18 +324,15 @@
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.getElementById('nav-links');
 
-        // Toggle dropdown on mobile
         hamburger.addEventListener('click', () => {
             navLinks.classList.toggle('active');
         });
 
-        // Close menu when a link is clicked
         document.querySelectorAll('.nav-right a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
             });
         });
     </script>
-
 </body>
 </html>
